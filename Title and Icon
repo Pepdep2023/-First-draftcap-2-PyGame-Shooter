@@ -1,5 +1,7 @@
 
 #Title and Icon
-pygame.display.set_caption("SHOOTER(GAME)")
+pygame.display.set_caption("SHOOTER")
 icon = pygame.image.load('ufo (2).png')
 pygame.display.set_icon(icon)
+ 
+
