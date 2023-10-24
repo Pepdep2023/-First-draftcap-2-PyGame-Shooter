@@ -1,7 +1,7 @@
 #Player
 player_image = pygame.image.load('spaceship.png')
-playerX = 400
-playerY = 520
+playerX = 500
+playerY = 650
 
 def player():
     screen.blit(player_image,(playerX,playerY))

@@ -14,8 +14,8 @@ player_image = pygame.image.load('spaceship.png')
 playerX = 500
 playerY = 650
 
-def player():
-    screen.blit(player_image,(playerX,playerY))
+def player(x,y):
+    screen.blit(player_image,(x,y))
 
 #Game loop(window doesn't close down or hanging)
 running = True
@@ -26,7 +26,10 @@ while running:
 
 # Screen colour:RBG(Red,Blue and Green)
         screen.fill((128,128,0))
+        playerY -= 0.5
+        print(playerY)
+
  #write 'player()' after screen.fill
-        player()
+        player(playerX,playerY)
         pygame.display.update()
 

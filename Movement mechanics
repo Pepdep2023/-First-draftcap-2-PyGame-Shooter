@@ -1,0 +1,8 @@
+def player(x,y):
+    screen.blit(player_image, (x, y))
+
+#Game loop
+running = True
+while running:
+    playerX +=
+    
