@@ -24,15 +24,23 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    
-#If keystrock is pressed check weather it is right or left
 
 # Screen colour:RBG(Red,Blue and Green)
         screen.fill((0,255,255))
-        playerY -= 0.5
-        print(playerY)
+    
+        #If keystrock is pressed check weather it is right or left
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                playerX_change = -0.1
+            if event.key == pygame.K_RIGHT:
+                playerX_change = 0.1
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                playerX_change = 0.1
+
 
  #write 'player()' after screen.fill
-        player(playerX,playerY)
+        playerX += playerX_change
+        player(playerX, playerY)
         pygame.display.update()
 
