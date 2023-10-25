@@ -11,6 +11,7 @@ pygame.display.set_icon(icon)
 
 #Player
 player_image = pygame.image.load('spaceship.png')
+player_image = pygame.transform.scale(player_image, (50, 50))
 playerX = 500
 playerY = 650
 
@@ -23,9 +24,11 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    
+#If keystrock is pressed check weather it is right or left
 
 # Screen colour:RBG(Red,Blue and Green)
-        screen.fill((128,128,0))
+        screen.fill((0,255,255))
         playerY -= 0.5
         print(playerY)
 

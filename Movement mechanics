@@ -4,5 +4,10 @@ def player(x,y):
 #Game loop
 running = True
 while running:
-    playerX +=
+    playerY += 0.5
+    print(playerY)
+# for up and down-playerY
+#for left and right-playerX
+
+playee(playerX,playerY)
     
