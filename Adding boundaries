@@ -1,0 +1,9 @@
+# Prevent the player from moving off the screen
+if playerX_change <= 0:
+        playerX_change = 0
+elif playerX_change + 50 >= 1000:
+        playerX_change = 1000 - 50
+if playerY <= 0:
+       playerY = 0
+elif playerY + 50 >= 800:
+        playerY = 800 - 50

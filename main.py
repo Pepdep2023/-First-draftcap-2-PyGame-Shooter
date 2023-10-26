@@ -1,4 +1,5 @@
 import pygame
+import random
 #initialize pygame
 pygame.init()
 #creating screen for the game
@@ -11,12 +12,22 @@ pygame.display.set_icon(icon)
 
 #Player
 player_image = pygame.image.load('spaceship.png')
-player_image = pygame.transform.scale(player_image, (50, 50))
+player_image = pygame.transform.scale(player_image, (60, 60))
 playerX = 500
 playerY = 650
 
+#Enemy
+enemy_image = pygame.image.load('final-boss.png')
+enemy_image = pygame.transform.scale(enemy_image, (40, 40))
+enemyX = random.randint(0,1000)
+enemyY = random.randint(100,100)
+enemyX_change = 0
+
 def player(x,y):
     screen.blit(player_image,(x,y))
+
+def enemy(x,y):
+    screen.blit(enemy_image,(x,y))   
 
 playerX_change = playerX
 #Game loop(window doesn't close down or hanging)
@@ -55,6 +66,7 @@ while running:
  #write 'player()' after screen.fill
     # playerX += playerX_change
     player(playerX_change, playerY)
+    enemy(enemyX, enemyY)
     pygame.display.update()
     # playerX_change = 0
         

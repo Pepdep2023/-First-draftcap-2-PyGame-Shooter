@@ -1,0 +1,12 @@
+import random
+#Enemy
+enemy_image = pygame.image.load('final-boss.png')
+enemy_image = pygame.transform.scale(enemy_image, (40, 40))
+enemyX = random.randint(0,1000)
+enemyY = random.randint(100,100)
+enemyX_change = 0
+
+def enemy(x,y):
+    screen.blit(enemy_image,(x,y))  
+
+enemy(enemyX, enemyY)
