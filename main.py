@@ -41,13 +41,20 @@ while running:
         #     if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 # playerX_change = 10
                 # player(playerX + 10, playerY)
-
-
-
+ 
+ # Prevent the player from moving off the screen
+    if playerX_change <= 0:
+        playerX_change = 0
+    elif playerX_change + 50 >= 1000:
+        playerX_change = 1000 - 50
+    if playerY <= 0:
+       playerY = 0
+    elif playerY + 50 >= 800:
+        playerY = 800 - 50
 
  #write 'player()' after screen.fill
     # playerX += playerX_change
     player(playerX_change, playerY)
     pygame.display.update()
     # playerX_change = 0
-
+        
