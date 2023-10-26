@@ -18,6 +18,7 @@ playerY = 650
 def player(x,y):
     screen.blit(player_image,(x,y))
 
+playerX_change = playerX
 #Game loop(window doesn't close down or hanging)
 running = True
 while running:
@@ -31,16 +32,22 @@ while running:
         #If keystrock is pressed check weather it is right or left
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                playerX_change = -0.1
+                playerX_change = playerX_change - 10
+                # player(playerX + 10, playerY)
             if event.key == pygame.K_RIGHT:
-                playerX_change = 0.1
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                playerX_change = 0.1
+                playerX_change = playerX_change + 10
+                # player(playerX - 10, playerY)
+        # if event.type == pygame.KEYUP:
+        #     if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                # playerX_change = 10
+                # player(playerX + 10, playerY)
+
+
 
 
  #write 'player()' after screen.fill
-        playerX += playerX_change
-        player(playerX, playerY)
-        pygame.display.update()
+    # playerX += playerX_change
+    player(playerX_change, playerY)
+    pygame.display.update()
+    # playerX_change = 0
 
